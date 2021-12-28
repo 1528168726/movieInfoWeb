@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="referrer" content="never">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--     Bootstrap 的 CSS 文件 -->
+    <link href="\assets\bootstrap-5.1.3-dist\css\bootstrap.min.css"
+          rel="stylesheet"/>
+    <link href="\assets\css\self.css" rel="stylesheet"/>
+
+    <title>电影信息站-{{.movie.ChineseName}}</title>
+</head>
+<body>
+<div class="self-background-color">
+    <nav class="navbar navbar-expand-sm navbar-light bg-gradient self-bar-color">
+        <div class="container">
+            <a class="navbar-brand" href="\index">电影信息站</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " href="\index">主页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="\movies">电影</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="\actors">演员</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="\directors">导演</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            榜单
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown"
+                            style="background-color: rgb(154,180,205); ">
+                            <li><a class="dropdown-item" href="\top250">top250</a></li>
+                            <li><a class="dropdown-item" href="\Oscar">奥斯卡</a></li>
+                            <!--                        <li>-->
+                            <!--                            <hr class="dropdown-divider">-->
+                            <!--                        </li>-->
+                            <!--                        <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+                        </ul>
+                    </li>
+                    <!--                <li class="nav-item">-->
+                    <!--                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
+                    <!--                </li>-->
+                </ul>
+                <form class="d-flex" action="\search" method="get">
+                    <input class="form-control me-2" type="search" name="searchKey" placeholder="搜索电影/演员"
+                           aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container " style="padding-top: 40px">
+        <div class="row ">
+            <div class="col-3 offset-2">
+                <img class="img-thumbnail rounded "
+                     src="{{.movie.ImgUrl}}" alt="...">
+            </div>
+            <div class="col-4">
+                <h1>{{.movie.ChineseName}}</h1>
+                <p>其他名: <strong>{{.movie.OtherName}}</strong></p>
+                <p>导演：<strong>{{.movie.DirectorName}}</strong></p>
+                <p>年份: <strong>{{.movie.Year}}</strong></p>
+                <p>
+                    类型:
+                    <strong>
+                        {{range .movie.Type}}{{.}}&nbsp;{{end}}
+                    </strong>
+                </p>
+                <p>制片国家/地区: <strong>{{.movie.Country}}</strong></p>
+                <p>语言: <strong>{{.movie.Language}}</strong></p>
+                <p>片长: <strong>{{.movie.Length}}分钟</strong></p>
+                <p>常用标签
+                    <strong>
+                        {{range .movie.Tag}}{{.}}&nbsp;{{end}}
+                    </strong>
+                </p>
+            </div>
+            <div class="col-1">
+                豆瓣评分：<br>
+                <div class="btn btn-lg btn-warning">{{.movie.DoubanScore}}</div>
+            </div>
+        </div>
+        <div class="container m-4">
+            <div class="row">
+                <div class="col-8 offset-2">
+                    <h3 class="text-success">剧情简介：</h3>
+                    <p>{{.movie.Summary}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="container m-4">
+            <div class="row">
+                <div class="col-8 offset-2">
+                    <h3 class="text-success">相关电影：</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 offset-2 row row-cols-1 row-cols-md-5 g-2">
+                    {{range $index, $ele := .movie.RelatedMovie}}
+                    <div class="col">
+                        <div class="card h-100 self-card-gb-gray">
+                            <a href="{{$ele.Url}}" class="link-dark text-decoration-none">
+                                <img src="{{$ele.ImgUrl}}" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <a href="{{$ele.Url}}" class="link-dark text-decoration-none">
+                                    <h5 class="card-title">{{$ele.Name}}</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {{end}}
+                </div>
+            </div>
+        </div>
+        {{if  .movie.DirectorName}}
+        <div class="container m-4">
+            <div class="row">
+                <div class="col-6 offset-2">
+                    <h3 class="text-success">导演：</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 offset-2 row row-cols-1 row-cols-md-4 g-2">
+                    <div class="col">
+                        <div class="card h-100 self-card-gb-gray">
+                            <a href="{{.movie.Director.Url}}" class="link-dark text-decoration-none">
+                                <img src="{{.movie.Director.ImgUrl}}" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <a href="{{.movie.Director.Url}}" class="link-dark text-decoration-none">
+                                    <h5 class="card-title">{{.movie.Director.Name}}</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{end}}
+        <div class="container m-4">
+            <div class="row">
+                <div class="col-8 offset-2">
+                    <h3 class="text-success">演员：</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 offset-2 row row-cols-1 row-cols-md-4 g-2">
+                    {{range $index, $ele := .movie.Actors}}
+                    <div class="col">
+                        <div class="card h-100 self-card-gb-gray">
+                            <a href="{{$ele.Url}}" class="link-dark text-decoration-none">
+                                <img src="{{$ele.ImgUrl}}" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <a href="{{$ele.Url}}" class="link-dark text-decoration-none">
+                                    <h5 class="card-title">{{$ele.Name}}</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {{end}}
+                </div>
+            </div>
+        </div>
+        <div class="container m-4">
+            <div class="row">
+                <div class="col-8 offset-2">
+                    <h3 class="text-success">编剧：</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 offset-2 row row-cols-1 row-cols-md-4 g-2">
+                    {{range $index, $ele := .movie.Writers}}
+                    <div class="col">
+                        <div class="card h-100 self-card-gb-gray">
+                            <a href="{{$ele.Url}}" class="link-dark text-decoration-none">
+                                <img src="{{$ele.ImgUrl}}" class="card-img-top" alt="...">
+                            </a>
+                            <div class="card-body">
+                                <a href="{{$ele.Url}}" class="link-dark text-decoration-none">
+                                    <h5 class="card-title">{{$ele.Name}}</h5>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {{end}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bd-footer py-2 mt-5 self-footer-color">
+        <div class="container py-2 ">
+            <div class="row justify-content-center">
+                <div class="col-2 ">
+                    <small class="justify-content-center">Delevoped by alg</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<script src="\assets\bootstrap-5.1.3-dist\js\bootstrap.bundle.min.js"></script>
+</body>
+</html>

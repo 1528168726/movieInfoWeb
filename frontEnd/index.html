@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="referrer" content="never">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--     Bootstrap 的 CSS 文件 -->
+    <link href="assets\bootstrap-5.1.3-dist\css\bootstrap.min.css"
+          rel="stylesheet"/>
+    <link href="assets\css\self.css" rel="stylesheet"/>
+    <title>电影信息站-主页</title>
+</head>
+<body>
+<div class="self-background-color">
+    <nav class="navbar navbar-expand-sm navbar-light bg-gradient self-bar-color">
+        <div class="container">
+            <a class="navbar-brand" href="index">电影信息站</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index">主页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="movies">电影</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="actors">演员</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="directors">导演</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                            榜单
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown"
+                            style="background-color: rgb(154,180,205); ">
+                            <li><a class="dropdown-item" href="top250">top250</a></li>
+                            <li><a class="dropdown-item" href="Oscar">奥斯卡</a></li>
+                            <!--                        <li>-->
+                            <!--                            <hr class="dropdown-divider">-->
+                            <!--                        </li>-->
+                            <!--                        <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+                        </ul>
+                    </li>
+                    <!--                <li class="nav-item">-->
+                    <!--                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
+                    <!--                </li>-->
+                </ul>
+                <form class="d-flex" action="search" method="get">
+                    <input class="form-control me-2" type="search" name="searchKey" placeholder="搜索电影/演员"
+                           aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a href="/subject/1292720">
+                                <img src="image/index_cover_1.jpg" class="d-block w-100" alt="...">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="/subject/1291560">
+                                <img src="image/index_cover_2.jpg" class="d-block w-100" alt="...">
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="/subject/20495023">
+                                <img src="image/index_cover_3.jfif" class="d-block w-100" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                       data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                       data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card mb-3" style="max-width: 540px;background-color: rgb(218,227,230)">
+                    <div class="row g-0">
+                        <div class="col-md-2">
+                            <a href = "/subject/3742360" class="link-dark text-decoration-none">
+                                <img class="card-img"
+                                     src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p1512562287.jpg"
+                                     alt="...">
+                            </a>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="card-body">
+                                <h5 class="card-title"> <a href = "/subject/3742360" class="link-dark text-decoration-none">让子弹飞</a> </h5>
+                                <p class="card-text">剧情/喜剧/动作/西部 </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-md-2">
+                            <a href = "/subject/1291546" class="link-dark text-decoration-none">
+                                <img class="card-img"
+                                     src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2561716440.jpg"
+                                     alt="...">
+                            </a>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="card-body">
+                                <h5 class="card-title"> <a href = "/subject/1291546" class="link-dark text-decoration-none"> 霸王别姬 </a></h5>
+                                <p class="card-text"> 剧情/爱情/同性 </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-md-2">
+                            <a href = "/subject/1292720" class="link-dark text-decoration-none">
+                                <img class="card-img"
+                                     src="https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2372307693.jpg"
+                                     alt="...">
+                            </a>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="card-body">
+                                <h5 class="card-title"> <a href = "/subject/1292720" class="link-dark text-decoration-none"> 阿甘正传 </a> </h5>
+                                <p class="card-text">剧情/爱情</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-0">
+                        <div class="col-md-2">
+                            <a href = "/subject/1292720" class="link-dark text-decoration-none">
+                                <img class="card-img"
+                                     src="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2614500706.jpg"
+                                     alt="...">
+                            </a>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="card-body">
+                                <h5 class="card-title"> <a href = "/subject/1292720" class="link-dark text-decoration-none">寻梦环游记 </a> </h5>
+                                <p class="card-text">喜剧/动画/音乐/奇幻</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-outline-primary" type="button">更多 top250排行榜</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-lg-5">
+        <div class="row justify-content-center">
+            <div class="row align-items-center mb-2 mt-lg ">
+                <div class="col-10">
+                    <h2 class="heading h3 mb-0">
+                        <a href="movies" class="link-dark text-decoration-none">
+                            电影
+                        </a>
+                    </h2>
+                </div>
+                <div class="col-2 text-right">
+                    <a href="movies" class="btn btn-sm btn-outline-primary">更多电影</a>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-4 g-3">
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/subject/3742360" class="link-dark text-decoration-none">
+                            <img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p1512562287.jpg"
+                                 class="card-img-top" alt="..."> </a>
+                        <div class="card-body">
+                            <h5 class="card-title"> <a href = "/subject/3742360" class="link-dark text-decoration-none"> 让子弹飞 </a> </h5>
+                            <p class="card-text">民国年间，花钱捐得县长的马邦德（葛优 饰）携妻（刘嘉玲 饰）上任途中，遭劫匪张麻子（姜文 饰）一伙伏击。马为保命，谎称自己是县长的汤师爷。
+                                为汤师爷许下的财富所动，张麻子摇身一变化身县长，带着手下赶赴鹅城上任……</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/subject/1418019" class="link-dark text-decoration-none">
+                            <img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2184505167.jpg"
+                                 class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"> <a href = "/subject/1418019" class="link-dark text-decoration-none"> 大闹天宫 </a> </h5>
+                            <p class="card-text">话说在花果山上有一尊石猴吸收日精月华化身为一只神猴（邱岳峰 音），为求得一件称心的宝贝，神猴孙大圣潜入龙宫，强硬求来定海神针如意金箍棒。
+                                东海龙王（毕克 音）将此事诉诸玉帝（富润生 音）……</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/subject/27060077" class="link-dark text-decoration-none">
+                            <img src="https://img2.doubanio.com/view/photo/s_ratio_poster/public/p2549177902.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href = "/subject/27060077" class="link-dark text-decoration-none">绿皮书 </a> </h5>
+                            <p class="card-text">托尼（维果·莫腾森 Viggo Mortensen 饰）是一个吊儿郎当游手好闲的混混，被一位名叫唐雪莉（马赫沙拉·阿里 Mahershala Ali 饰）的黑人钢琴家所雇佣。
+                                唐雪莉即将开始为期八个星期的南下巡回演出，可是，那个时候南方对黑人的歧视非常的严重，于是托尼便成为了唐雪莉的司机兼保镖……</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/subject/1900841" class="link-dark text-decoration-none">
+                            <img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p1808872109.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href = "/subject/1900841" class="link-dark text-decoration-none">窃听风暴</a></h5>
+                            <p class="card-text">1984年的东德，特工魏斯曼（乌尔利希·穆厄 饰）奉命监听剧作家德莱曼（塞巴斯蒂安·寇治 饰）及其女友演员克里斯蒂娜（玛蒂娜·杰蒂克 饰）的生活，
+                                监听过程中，魏斯曼渐渐对这家人的生活产生了兴趣。一篇刊登在西德《明 镜》报上的文章引起了特工头目的注意，他们认为这篇文章是德莱曼写的，并逮捕了克里斯蒂娜，希望能够从她口中得出她丈夫的秘密？而审问克里斯蒂娜的正是魏斯曼……</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/subject/1292849" class="link-dark text-decoration-none">
+                            <img src="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p1014542496.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"> <a href = "/subject/1292849" class="link-dark text-decoration-none">拯救大兵瑞恩 </a> </h5>
+                            <p class="card-text">瑞恩（马特•达蒙 Matt Damon饰 ）是二战期间的美国伞兵，被困在了敌人后方。更不幸的是，他的三个兄弟全部在战争中死亡，如果他也遇难，家中的老母亲将无依无靠。
+                                美国作战总指挥部知道了这个情况，毅然决定组织一个小分队前往救援，其中包括米勒上尉（汤姆•汉克斯 Tom Hanks 饰 ）和翻译厄本（杰里米.戴维斯 Jererry Davies饰）……</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/subject/1849031" class="link-dark text-decoration-none">
+                            <img src="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2614359276.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href = "/subject/1849031" class="link-dark text-decoration-none">当幸福来敲门</a></h5>
+                            <p class="card-text">克里斯•加纳（威尔·史密斯 Will Smith 饰）用尽全部积蓄买下了高科技治疗仪，到处向医院推销，可是价格高昂，接受的人不多。
+                                就算他多努力都无法提供一个良好的生活环境给妻儿，克里斯好不容易争取回来一个股票投资公司实习的机会，就算没有报酬，成功机会只有百分之五，他仍努力奋斗，他坚信，幸福明天就会来临……</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/subject/4920389" class="link-dark text-decoration-none">
+                            <img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2516578307.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"> <a href = "/subject/4920389" class="link-dark text-decoration-none">头号玩家 </a></h5>
+                            <p class="card-text">故事发生在2045年，詹姆斯哈利迪（马克·里朗斯 Mark Rylance 饰）一手建造了名为“绿洲”的虚拟现实游戏世界，
+                                临终前，他宣布自己在游戏中设置了一个彩蛋，找到这枚彩蛋的人即可成为绿洲的继承人。
+                                韦德（泰尔·谢里丹 Tye Sheridan 饰）、艾奇（丽娜·维特 Lena Waithe 饰）、大东（森崎温 饰）和修（赵家正 饰）是游戏中的好友，和之后遇见的阿尔忒弥斯（奥利维亚·库克 Olivia Cooke 饰）一起，
+                                五人踏上了寻找彩蛋的征程……</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/subject/26683290" class="link-dark text-decoration-none">
+                            <img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2395733377.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"> <a href = "/subject/26683290" class="link-dark text-decoration-none">你的名字 </a></h5>
+                            <p class="card-text">在远离大都会的小山村，住着巫女世家出身的高中女孩宫水三叶（上白石萌音 配音）。
+                                不知从何时起，三叶在梦中就会变成一个住在东京的高中男孩。另一方面，住在东京的高中男孩立花泷（神木隆之介 配音）则总在梦里来到陌生的小山村，
+                                以女孩子的身份过着全新的生活。许是受那颗神秘彗星的影响，立花和三叶在梦中交换了身份。只是两人并不知道，身份交换的背后隐藏着重大而锥心的秘密……</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-lg-5">
+        <div class="row justify-content-center">
+            <div class="row align-items-center mb-2 mt-lg ">
+                <div class="col-10">
+                    <h2 class="heading h3 mb-0">
+                        演员
+                    </h2>
+                </div>
+                <div class="col-2 text-right">
+                    <a href="actors" class="btn btn-sm btn-outline-primary">更多演员</a>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-4 g-3">
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1016681" class="link-dark text-decoration-none">
+                            <img src="https://img1.doubanio.com/view/celebrity/raw/public/p56339.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"> <a href = "/celebrity/1016681" class="link-dark text-decoration-none">小罗伯特·唐尼 </a> </h5>
+                            <p class="card-text">美国男演员。
+                                1986年，首次担任男主角拍摄电影《The pick-up Artist》；1987年，因在电影《less than zero》中出色的表现而成名，获取影评界关注。
+                                1993年， 获得个人首个奥斯卡提名。
+                                2006年9月，获得职业生涯中最重要的角色“Iron man”，2008年影片《钢铁侠》大卖，重新回归事业巅峰，同年凭借在影片热带惊雷中的完美表演，获得各大主要奖项的提名。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1000012" class="link-dark text-decoration-none">
+                            <img src="https://img1.doubanio.com/view/celebrity/raw/public/p1370348111.17.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"> <a href = "/celebrity/1000012" class="link-dark text-decoration-none">莉顿·梅斯特 </a></h5>
+                            <p class="card-text">美国著名演员。出生在美国佛罗里达州马可岛，因出演《绯闻女友》而为人所知。2006年同詹妮弗·莫里森、杰西·斯宾塞等人一起出演了名为《Flourish》的独立影片，
+                                另一部低成本影片《Inside》则是赚回了不少口碑的惊喜之作。
+                                2007年推出的小成本恐怖片《Drive-Thru》则是她第一次担当主角的电影作品。</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1094788" class="link-dark text-decoration-none">
+                            <img src="https://img9.doubanio.com/view/celebrity/raw/public/p2455.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"> <a href = "/celebrity/1094788" class="link-dark text-decoration-none"> 杰森·多灵 </a></h5>
+                            <p class="card-text">杰森·多灵是一位美国演员，他最有名的角色包括电视剧《美眉校掀》（《Veronica Mars》，2004-2007）中的富家弟子Logan Echolls，电视剧《血色月光》（《Moonlight》，2007）中的Josef Kostan以及电视剧《替身姐妹》（《Ringer》，2011）中的Adam Carpenter。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1054412" class="link-dark text-decoration-none">
+                            <img src="https://img9.doubanio.com/view/celebrity/raw/public/p585.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"> <a href = "/celebrity/1054412" class="link-dark text-decoration-none">本·斯蒂勒 </a></h5>
+                            <p class="card-text">本·斯蒂勒，美国著名喜剧演员、导演、制片人。代表作品有《博物馆惊魂夜》、《马达加斯加》等。
+                                斯蒂勒演出的角色似乎都跟爱情喜剧脱不了干系,
+                                1998年的《哈啦玛莉》他与马特·狄龙大抢完美女郎卡梅伦·迪亚兹，《相信爱情》中他每每跟不同典型的女郎相亲闹出许多笑话，
+                                《拜见岳父大人》的婚姻幸福则被未来岳父玩弄在股掌之上,本·斯蒂勒多灾多难的感情，总成为观众茶余饭后的最好娱乐。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1000055" class="link-dark text-decoration-none">
+                            <img src="https://img9.doubanio.com/view/celebrity/raw/public/p28644.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"> <a href = "/celebrity/1000055" class="link-dark text-decoration-none">亚美莉卡·费雷拉 </a></h5>
+                            <p class="card-text">亚美莉卡·费雷拉，美国演员。
+                                她在很多作品中有过出色的表演，主要有《牛仔裤的夏天》，《狗镇议员》。但真正让人们了解他的就是红遍全球的《丑女贝蒂》。该剧获选美国家庭电视最佳喜剧奖。
+                                而亚美莉卡·费雷拉获音乐喜剧类最佳系列剧女演员</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1054424" class="link-dark text-decoration-none">
+                            <img src="https://img2.doubanio.com/view/celebrity/raw/public/p1378956633.91.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href = "/celebrity/1054424" class="link-dark text-decoration-none">刘德华</a></h5>
+                            <p class="card-text">刘德华，著名演员和歌手。刘德华是个多线发展的艺人：作为歌手，他是吉尼斯世界纪录大全中，获奖最多的香港歌手；
+                                电影方面他曾三度夺得香港电影金像奖最佳男主角、以及获得两座台湾金马奖影帝，截止2010年参与出演的电影已经超过140部。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1054431" class="link-dark text-decoration-none">
+                            <img src="https://img1.doubanio.com/view/celebrity/raw/public/p608.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href = "/celebrity/1054431" class="link-dark text-decoration-none">丹泽尔·华盛顿</a></h5>
+                            <p class="card-text">丹泽尔·华盛顿是好莱坞最具号召力的演员之一，也是目前好莱坞身价最高的黑人影星。1990年凭借电影《光荣》获第62届奥斯卡最佳男配角奖，2000年凭借电影《飓风》获得第57届金球奖最佳男主角，
+                                2002年凭借电影《训练日》获第74届奥斯卡最佳男主角奖，是继西德尼·波蒂埃后第二位黑人影帝。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1054438" class="link-dark text-decoration-none">
+                            <img src="https://img9.doubanio.com/view/celebrity/raw/public/p615.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href = "/celebrity/1054438" class="link-dark text-decoration-none">金•凯瑞</a></h5>
+                            <p class="card-text">金•凯瑞，加拿大裔美籍喜剧演员。活跃于影坛多年，由于他的无俚头风格跟周星驰类似，曾有中文媒体把他誉为“好莱坞的周星驰”。
+                                凯瑞1994年开始主演《王牌威龙》（Ace Ventura），推出后引起轰动。接着他主演《摩登大圣》（The Mask）以大胆的创意和夸张的演技创下高票房记录。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-lg-5">
+        <div class="row justify-content-center">
+            <div class="row align-items-center mb-2 mt-lg ">
+                <div class="col-10">
+                    <h2 class="heading h3 mb-0">
+                        导演
+                    </h2>
+                </div>
+                <div class="col-2 text-right">
+                    <a href="actors" class="btn btn-sm btn-outline-primary">更多导演</a>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-4 g-3">
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1054439" class="link-dark text-decoration-none">
+                            <img src="https://img9.doubanio.com/view/celebrity/raw/public/p616.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href = "/celebrity/1054439" class="link-dark text-decoration-none">宫崎骏</a></h5>
+                            <p class="card-text">宫崎骏可以说是日本动画界的一个传奇，可以说没有他的话日本的动画事业会大大的逊色。
+                                他是第一位将动画上升到人文高度的思想者，同时也是日本三代动画家中，承前启后的精神支柱人物。宫崎骏在打破手冢治虫巨人阴影的同时，用自己坚毅的性格和永不妥协的奋斗又为后代动画家做出了榜样。
+                                宫崎骏的动画片是能够和迪斯尼、梦工厂共分天下的一支重要的东方力量。宫崎骏的每部作品，题材虽然不同，但却将梦想、环保、人生、生存这些令人反思的讯息，融合其中。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1027159" class="link-dark text-decoration-none">
+                            <img src="https://img1.doubanio.com/view/celebrity/raw/public/p1047.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href = "/celebrity/1027159" class="link-dark text-decoration-none"> 山姆·雷米 </a></h5>
+                            <p class="card-text">山姆·雷米，美国当代最具活力和创造力的导演，以他快速夸张的摄影机运动而自成一格。作品具有早期喜剧片的诙谐与漫画般的节奏感，允满了黑色幽默。
+                                1985年萨姆·莱米与当时也在独立片界窜红的柯恩兄弟合作，执导了他们所编写的《XYZ谋杀案》，开启了他天马行空的卡通式想像空间。萨姆·莱米仿袭自史柯西斯的摄影机运动，而创出个人风格十足的影像语言，
+                                带有著漫画般的异想，却也有深刻的人性剖析</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1054507" class="link-dark text-decoration-none">
+                            <img src="https://img3.doubanio.com/view/celebrity/raw/public/p650.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href = "/celebrity/1054507" class="link-dark text-decoration-none">乔治·卢卡斯</a></h5>
+                            <p class="card-text">乔治·卢卡斯，美国的电影导演、制片人和编剧，其最著名的是史诗式作品《星球大战》系列（导演）和《夺宝奇兵》系列（编剧）。
+                                1977年，在福克斯公司的大力支持下，卢卡斯以其非凡的艺术才华执导了影片《星球大战》，之后凭借该电影摘得了1978年奥斯卡奖的7项大奖。
+                                80年代初，他又与大导演史蒂文·斯皮尔伯格合作，制作了《印第安纳·琼斯》系列，又称《夺宝奇兵》，这些影片都取得了良好的票房收入。
+                                </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1000380" class="link-dark text-decoration-none">
+                            <img src="https://img3.doubanio.com/view/celebrity/raw/public/p22080.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href = "/celebrity/1000380" class="link-dark text-decoration-none">苏珊娜·比尔</a></h5>
+                            <p class="card-text">苏珊娜·比尔，著名丹麦电影导演，制片人兼剧作家。
+                                苏珊娜·比尔是目前整个斯堪的纳维亚地区最受欢迎和最具国际知名度的导演，也是一名善于挖掘男性角色的女导演。2007年她的《婚礼之后》第一次获得奥斯卡外语片提名，
+                                而她的成名作《血海兄弟》也被翻拍成好莱坞版的《兄弟》。2010年她的《更好的世界》赢得了第83届奥斯卡最佳外语片。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1041024" class="link-dark text-decoration-none">
+                            <img src="https://img1.doubanio.com/view/celebrity/raw/public/p1418226223.7.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"> <a href = "/celebrity/1041024" class="link-dark text-decoration-none">王家卫</a></h5>
+                            <p class="card-text">王家卫，著名导演。
+                                1988年开始执导第一部电影《旺角卡门》，为王氏导演生涯之始。1991年他凭《阿飞正传》赢得该年香港电影金像奖最佳导演；1995年亦凭《重庆森林》取得同一奖项；
+                                1997年，凭借《春光乍泄》获第50届戛纳电影节最佳导演奖，是第一位获此奖项的华人导演。2009年，为纪念张国荣，王家卫耗时4年时间重新剪辑的《东邪西毒: 终极版》，并在世界各地巡回上映。 </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1054524" class="link-dark text-decoration-none">
+                            <img src="https://img2.doubanio.com/view/celebrity/raw/public/p21241.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href = "/celebrity/1054524" class="link-dark text-decoration-none">克里斯托弗·诺兰</a></h5>
+                            <p class="card-text">
+                                2006年的导演作品《致命魔术》以其诡异的气氛和精细的结构再次赢得了影评人和影迷的心。2008年，诺兰凭借《蝙蝠侠：黑暗骑士》获第35届土星奖最佳编剧奖。
+                                2010年，凭《盗梦空间》获得金球奖最佳导演及最佳原创剧本提名;2012年，再度执导系列电影《蝙蝠侠：黑暗骑士崛起》，诺兰凭借此片获土星奖最佳导演提名。
+                                2015年3月，凭借执导电影《星际穿越》入围第41届美国科幻恐怖电影奖土星奖最佳导演奖；2017年，凭借《敦刻尔克》荣获亚特兰大影评人协会奖最佳导演、第90届奥斯卡金像奖最佳导演提名。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1054440" class="link-dark text-decoration-none">
+                            <img src="https://img1.doubanio.com/view/celebrity/raw/public/p617.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"> <a href = "/celebrity/1054440" class="link-dark text-decoration-none"> 史蒂文·艾伦·斯皮尔伯格 </a></h5>
+                            <p class="card-text">史蒂文·艾伦·斯皮尔伯格，美国著名电影导演、编剧、电影制作人、慈善家，主要导演作品包括《头号玩家》、《侏罗纪公园》、《辛德勒的名单》和《拯救大兵瑞恩》等多部影史经典。
+                                他的三部电影《大白鲨》、《E.T.外星人》 与《侏罗纪公园》，曾打破票房纪录，成为当时最卖座的电影。
+                                斯皮尔伯格凭着《辛德勒的名单》、《拯救大兵瑞恩》这两片进军了奥斯卡，先于1993年借《辛德勒的名单》荣获奥斯卡最佳导演奖，1998年借《拯救大兵瑞恩》获同一奖项。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 self-card-gb-gray">
+                        <a href = "/celebrity/1048026" class="link-dark text-decoration-none">
+                            <img src="https://img2.doubanio.com/view/celebrity/raw/public/p1362491610.81.jpg"
+                             class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title"><a href = "/celebrity/1048026" class="link-dark text-decoration-none">周星驰</a></h5>
+                            <p class="card-text">周星驰（1962年6月22日出生），生于香港，英文名Stephen Chow，著名演员，兼导演、编剧、电影监制以及电影制作人。曾主演《九品芝麻官》、《长江七号》等多部喜剧影片。
+                                捧红过张柏芝、张雨绮等影星。曾获1998年国际杰人会港澳杰人之星奖。其与成龙和周润发并称“双周一成”，意为香港电影票房的保证。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bd-footer py-2 mt-5 self-footer-color">
+        <div class="container py-2 ">
+            <div class="row justify-content-center">
+                <div class="col-2 ">
+                    <small class="justify-content-center">Delevoped by alg</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<script src="assets\bootstrap-5.1.3-dist\js\bootstrap.bundle.min.js"></script>
+</body>
+</html>
